@@ -95,8 +95,6 @@ namespace Q144348 {
             // chartControl1
             // 
             this.chartControl1.DataSource = this.pivotGridControl1;
-            xyDiagram1.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl1.Location = new System.Drawing.Point(0, 294);
@@ -105,7 +103,6 @@ namespace Q144348 {
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.chartControl1.SeriesTemplate.ArgumentDataMember = "Arguments";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Values";
-            this.chartControl1.SeriesTemplate.PointOptionsTypeName = "PointOptions";
             this.chartControl1.Size = new System.Drawing.Size(747, 295);
             this.toolTipController1.SetSuperTip(this.chartControl1, null);
             this.chartControl1.TabIndex = 1;
