@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace Q144348
+﻿Namespace Q144348
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -94,8 +92,6 @@ Namespace Q144348
 			' chartControl1
 			' 
 			Me.chartControl1.DataSource = Me.pivotGridControl1
-			xyDiagram1.AxisX.Range.SideMarginsEnabled = True
-			xyDiagram1.AxisY.Range.SideMarginsEnabled = True
 			Me.chartControl1.Diagram = xyDiagram1
 			Me.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.chartControl1.Location = New System.Drawing.Point(0, 294)
@@ -104,11 +100,11 @@ Namespace Q144348
 			Me.chartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(){}
 			Me.chartControl1.SeriesTemplate.ArgumentDataMember = "Arguments"
 			Me.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Values"
-			Me.chartControl1.SeriesTemplate.PointOptionsTypeName = "PointOptions"
 			Me.chartControl1.Size = New System.Drawing.Size(747, 295)
 			Me.toolTipController1.SetSuperTip(Me.chartControl1, Nothing)
 			Me.chartControl1.TabIndex = 1
-'			Me.chartControl1.ObjectHotTracked += New DevExpress.XtraCharts.HotTrackEventHandler(Me.chartControl1_ObjectHotTracked);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.chartControl1.ObjectHotTracked += new DevExpress.XtraCharts.HotTrackEventHandler(this.chartControl1_ObjectHotTracked);
 			' 
 			' Form1
 			' 
@@ -119,7 +115,8 @@ Namespace Q144348
 			Me.Controls.Add(Me.pivotGridControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.bindingSource1, System.ComponentModel.ISupportInitialize).EndInit()

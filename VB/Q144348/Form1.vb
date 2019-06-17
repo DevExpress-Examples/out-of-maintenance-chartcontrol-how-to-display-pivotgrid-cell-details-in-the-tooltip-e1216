@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Data
@@ -13,11 +12,12 @@ Imports DevExpress.Data.PivotGrid
 Namespace Q144348
 	Partial Public Class Form1
 		Inherits Form
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 			' TODO: This line of code loads data into the 'nwindDataSet.SalesPerson' table. You can move, or remove it, as needed.
 			Me.salesPersonTableAdapter.Fill(Me.nwindDataSet.SalesPerson)
 
@@ -29,13 +29,15 @@ Namespace Q144348
 			If point IsNot Nothing Then
 				Dim coord As PivotChartDataSourceRowItem = TryCast(point.Tag, PivotChartDataSourceRowItem)
 
-				Dim chart As ChartControl = CType(sender, ChartControl)
+				Dim chart As ChartControl = DirectCast(sender, ChartControl)
 				Dim pivot As PivotGridControl = CType(chart.DataSource, PivotGridControl)
 				Dim info As PivotCellEventArgs = pivot.Cells.GetCellInfo(coord.CellX, coord.CellY)
 				Dim source As PivotSummaryDataSource = info.CreateSummaryDataSource()
 				Dim s As String = String.Empty
 				For i As Integer = 0 To source.RowCount - 1
-					s &= "Country = " & source.GetValue(i, 0).ToString() & Constants.vbCr + Constants.vbTab & "Year = " & source.GetValue(i, 1).ToString() & Constants.vbCr + Constants.vbTab & "Extended Price = " & source.GetValue(i, 2).ToString() & Constants.vbCrLf
+					s &= "Country = " & source.GetValue(i, 0).ToString() &
+						vbCr & vbTab & "Year = " & source.GetValue(i, 1).ToString() &
+						vbCr & vbTab & "Extended Price = " & source.GetValue(i, 2).ToString() & vbCrLf
 				Next i
 				toolTipController1.ShowHint(s)
 			Else
